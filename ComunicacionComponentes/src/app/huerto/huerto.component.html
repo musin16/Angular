@@ -1,0 +1,9 @@
+<app-hortaliza
+  [mensajeDeEntradaHortaliza]="mensajeParaHortaliza"
+  (mensajeDeSalidaHortaliza)="actualizaMensajeDeHortaliza($event)"
+  (nsemilleros)="actualizarNumeroSemilleros($event)"
+></app-hortaliza>
+
+<p>Mensaje de la hortaliza: {{ mensajeDeHortaliza }}</p>
+<p>Número de semilleros: {{ peticionesSemilla }}</p>
+<app-frutal></app-frutal>
