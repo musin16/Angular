@@ -1,0 +1,8 @@
+<div id="frutal">
+    <h1>Frutal a huerto</h1>
+    <label for="enviarFrutalHuerto">.</label>
+    <input id="enviarFrutalHuerto" [(ngModel)]="mensajeFruta" (keyup)="enviaMensajeFrutal()">
+    <button (click)="enviarPlatones()" class="btn btn-success btn-md m-2">Mandar Platones</button>
+    <p>El huerto dice: {{mensajeDeEntradaFruta}}</p>
+</div>
+
