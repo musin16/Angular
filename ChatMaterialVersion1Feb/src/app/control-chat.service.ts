@@ -40,7 +40,7 @@ export class ControlChatService {
     return  this.httpClient.post<Usuario>("http://moralo.atwebpages.com/chat/BloquearUsuario.php",usuario)
   }
   obtenerUsuarios():Observable<Usuario[]>{
-    return this.httpClient.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerUsuarios2.php");
+    return this.httpClient.get<Usuario[]>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerUsuarios.php");
   }
   leerChatActivo():Observable<Mensaje[]> {
     return this.httpClient.get<Mensaje[]>('http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajes2.php');
