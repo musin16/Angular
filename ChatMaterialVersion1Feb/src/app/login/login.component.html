@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div>
+      <mat-form-field appearance="fill" class="control">
+        <mat-label>Usuario</mat-label>
+        <input matInput id="user" type="text" [(ngModel)]="usuario.email">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="control">
+        <mat-label>Contraseña</mat-label>
+        <input matInput id="contra" type="password" [(ngModel)]="usuario.pwd">
+      </mat-form-field>
+      <br>
+      <div class="text-center">
+        <button mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
