@@ -1,0 +1,23 @@
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<button mat-button [matMenuTriggerFor]="menu2">Chat</button>
+<mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="login">
+        <span class="material-icons">login</span> Login
+    </a>
+    <a mat-menu-item routerLink="registro">
+        <span class="material-icons">person_add</span> Registrar
+    </a>
+    <a mat-menu-item routerLink="gestion">
+        <span class="material-icons">settings</span> Gestion
+    </a> 
+    <mat-menu #menu2="matMenu">
+        <a mat-menu-item routerLink="chat">
+            <span class="material-icons">chat</span> Chat
+        </a>
+        <a mat-menu-item routerLink="enviarmensaje">
+                <span class="material-icons">chat</span> Enviar Mensaje
+        </a> 
+    </mat-menu>
+</mat-menu>
+
+<router-outlet></router-outlet>
