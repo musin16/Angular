@@ -5,13 +5,23 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Usuario } from '../usuario';
 import { Router } from '@angular/router';
 import { ControlChatService } from '../control-chat.service';
+import { MensajePrivado } from '../mensaje-privado';
 @Component({
   selector: 'app-enviar-mensaje',
   templateUrl: './enviar-mensaje.component.html',
-  styleUrl: './enviar-mensaje.component.css'
+  styleUrls: ['./enviar-mensaje.component.css']
 })
 export class EnviarMensajeComponent {
+usuarioSeleccionado(user: Usuario) {
+  this.usuarioSeleccion.destinatario=user.nombre;
+  this.usuarioSeleccion.usuario= this.usu;
+}
+enviarMensaje() {
+  this.service.enviarMensaje(this.usuarioSeleccion).subscribe()
+  this.usuarioSeleccion.mensaje="";
+}
   columnas: string[]=["idUsuario","nombre"];
+nuevoMensjae: any;
   activarUsuario(usuario: Usuario) {
     this.service.activarUsuario(usuario).subscribe(x=>{
       this.listar2();
@@ -48,6 +58,7 @@ export class EnviarMensajeComponent {
         
       }
   }
+    usuarioSeleccion=new MensajePrivado();
     usu!:string;
     listaUsuario: Usuario[] = [];
     ds: MatTableDataSource<Usuario>=new MatTableDataSource<Usuario>();

@@ -4,11 +4,15 @@ import { Mensaje } from './mensaje';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
+import { MensajePrivado } from './mensaje-privado';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ControlChatService {
+  enviarMensaje(user: MensajePrivado) {
+    return this.httpClient.post<MensajePrivado>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensajeP.php",user);
+  }
 
   obtenerUsuario(user: Usuario) {
     return this.httpClient.get<Usuario>('http://moralo.atwebpages.com/menuAjax/chat/SeleccionarUsuario.php?email='+user.email+'&pwd='+user.pwd)
