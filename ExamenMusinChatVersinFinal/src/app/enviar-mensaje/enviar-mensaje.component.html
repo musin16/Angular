@@ -1,0 +1,46 @@
+<div class="chat-container mat-elevation-z8">
+  <div class="chat-header">
+    <h1>Usuario: {{ usu }}</h1>
+    <mat-form-field appearance="fill" class="filter-input">
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+    </mat-form-field>
+    <button mat-icon-button color="primary" class="historial-button" (click)="obtenerHistorialChat()">
+      <mat-icon>history</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="cerrarSesion()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+
+  <div class="chat-messages">
+    <mat-table [dataSource]="ds" matSort class="mat-table">
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let usuario">
+          <div class="message-bubble">
+            <button mat-icon-button color="primary" (click)="usuarioSeleccionado(usuario)">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+            <span>{{ usuario.nombre }}</span>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnas"></mat-row>
+    </mat-table>
+    <div class="no-data" *ngIf="ds.data.length === 0">
+      No hay datos {{ input.value }}"
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input matInput placeholder="Mensaje..." [(ngModel)]="usuarioSeleccion.mensaje" />
+    <button mat-icon-button color="primary" (click)="enviarMensaje()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>

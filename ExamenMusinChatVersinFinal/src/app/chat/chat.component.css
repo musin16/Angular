@@ -1,0 +1,40 @@
+  /* Estilo del contenedor */
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  /*Cabecera */
+  h1 {
+    color: #075e54;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Filtracion en input*/
+  mat-form-field {
+    width: 100%;
+  }
+
+  /* Mensaje del input */
+  .message-input {
+    width: 80%;
+    margin-right: 10px;
+  }
+
+  /*Estilo de botones*/
+  button {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  /* Estilo de tablas */
+  .mat-elevation-z8 {
+    margin-top: 20px;
+  }
+
+  /* Estilo del paginador */
+  mat-paginator {
+    margin-top: 20px;
+  }

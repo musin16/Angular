@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-2">
+        <mat-form-field appearance="fill">
+          <label for="nombre">Nombre</label>
+          <input matInput id="nombre" type="text" [(ngModel)]="usuario.nombre" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <label for="user">Email</label>
+          <input matInput id="user" type="email" [(ngModel)]="usuario.email" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <label for="contra">Contraseña</label>
+          <input matInput id="contra" type="password" [(ngModel)]="usuario.pwd" required>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" (click)="registrarse()">Registrarse</button>
+      </div>
+    </div>
+  </div>
+  

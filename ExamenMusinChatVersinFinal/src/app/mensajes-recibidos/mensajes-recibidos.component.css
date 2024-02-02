@@ -1,0 +1,65 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .mb-4 {
+    margin-bottom: 20px;
+  }
+
+  .chat-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #075e54; /* WhatsApp green color */
+    margin-bottom: 15px;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .table th {
+    background-color: #075e54; /* WhatsApp green color */
+    color: white;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .mat-row {
+    background-color: #fff;
+  }
+
+  .mat-cell {
+    padding: 12px;
+  }
+
+  .mat-paginator {
+    margin-top: 20px;
+  }
