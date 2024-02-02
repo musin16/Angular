@@ -152,4 +152,23 @@
     text-transform: capitalize; /* Convierte el texto a mayúsculas solo para la primera letra de cada palabra */
     font-weight: bold; /* Texto en negrita */
   }
+/* Estilos para el botón "Historial" */
+.historial-button {
+    background-color: #25D366; /* Color verde similar a WhatsApp */
+    color: #fff; /* Texto en color blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interno */
+    margin-left: 8px; /* Espaciado a la izquierda */
+    cursor: pointer; /* Cambia el cursor al pasar sobre él */
+    transition: background-color 0.3s; /* Transición para el cambio de color en hover */
+  
+    /* Añade sombra sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo en hover */
+  .historial-button:hover {
+    background-color: #128C7E; /* Cambio de color en hover similar a WhatsApp */
+  }
   

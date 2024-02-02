@@ -10,6 +10,9 @@ import { MensajePrivado } from './mensaje-privado';
   providedIn: 'root'
 })
 export class ControlChatService {
+  obtenerHistorialChat(name: string) {
+    return this.httpClient.get<MensajePrivado>("http://moralo.atwebpages.com/menuAjax/chat/ObtenerMensajesP.php?usuario="+name)
+  }
   enviarMensaje(user: MensajePrivado) {
     return this.httpClient.post<MensajePrivado>("http://moralo.atwebpages.com/menuAjax/chat/AltaMensajeP.php",user);
   }

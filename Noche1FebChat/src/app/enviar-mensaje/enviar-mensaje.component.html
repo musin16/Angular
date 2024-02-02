@@ -1,5 +1,4 @@
 <div class="chat-container mat-elevation-z8">
-    <!-- Chat Header -->
     <div class="chat-header">
       <h1>Usuario: {{usu}}</h1>
       <mat-form-field appearance="fill" class="filter-input">
@@ -11,20 +10,21 @@
       </button>
     </div>
   
-    <!-- Chat Messages -->
     <div class="chat-messages">
-      <div class="message-bubble" *ngFor="let usuario of ds.data">
-        <button mat-icon-button color="primary" (click)="usuarioSeleccionado(usuario)">
-          <mat-icon>exit_to_app</mat-icon>
-        </button>
-        <span>{{usuario.nombre}}</span>
+        <div class="message-bubble" *ngFor="let usuario of ds.data">
+          <button mat-icon-button color="primary" (click)="usuarioSeleccionado(usuario)">
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+          <span>{{usuario.nombre}}</span>
+          <button mat-icon-button color="primary" class="historial-button" (click)="obtenerHistorialChat(usuario)">
+             <mat-icon>history</mat-icon>
+          </button>
+        </div>
+        <div class="no-data" *ngIf="ds.data.length === 0">
+          No hay datos"{{input.value}}"
+        </div>
       </div>
-      <div class="no-data" *ngIf="ds.data.length === 0">
-        No hay datos"{{input.value}}"
-      </div>
-    </div>
-  
-    <!-- Chat Input -->
+      
     <div class="chat-input">
       <input matInput placeholder="Mensaje..." [(ngModel)]="usuarioSeleccion.mensaje" />
       <button mat-icon-button color="primary" (click)="enviarMensaje()">

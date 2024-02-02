@@ -12,21 +12,29 @@ import { MensajePrivado } from '../mensaje-privado';
   styleUrls: ['./enviar-mensaje.component.css']
 })
 export class EnviarMensajeComponent {
+  historialChat: MensajePrivado[] = [];
 usuarioSeleccionado(user: Usuario) {
   this.usuarioSeleccion.destinatario=user.nombre;
   this.usuarioSeleccion.usuario= this.usu;
+  this.userSelecionado=user;
 }
 enviarMensaje() {
   this.service.enviarMensaje(this.usuarioSeleccion).subscribe()
   this.usuarioSeleccion.mensaje="";
+  this.obtenerHistorialChat(this.userSelecionado);
 }
   columnas: string[]=["idUsuario","nombre"];
-nuevoMensjae: any;
   activarUsuario(usuario: Usuario) {
     this.service.activarUsuario(usuario).subscribe(x=>{
       this.listar2();
     });
     
+  }
+  obtenerHistorialChat(usuario: Usuario) {
+    this.service.obtenerHistorialChat(usuario.nombre).subscribe(x=>
+      {
+        console.log("historial", x);
+      });
   }
   bloquearUsuario(usuario: Usuario) {
     this.service.boquearUsuario(usuario).subscribe(x=>{
@@ -58,6 +66,7 @@ nuevoMensjae: any;
         
       }
   }
+    userSelecionado: Usuario=new  Usuario();
     usuarioSeleccion=new MensajePrivado();
     usu!:string;
     listaUsuario: Usuario[] = [];
