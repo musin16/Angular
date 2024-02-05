@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #4CAF50; /* Verde brillante representando felicidad */
+    padding: 20px;
+    color: #fff;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333; /* Cambiado a un tono más oscuro para una mejor legibilidad */
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #FFD700;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para representar limpieza y claridad */
+    color: #333; /* Texto oscuro para una mejor legibilidad en el fondo blanco */
+}
+
+.content {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+router-outlet {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sutil sombra en el contenido dinámico */
+    background-color: #f2f2f2; /* Fondo gris claro similar a Gmail */
+}

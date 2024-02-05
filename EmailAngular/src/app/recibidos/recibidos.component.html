@@ -1,0 +1,11 @@
+<div class="received-container">
+    <h2>Mensajes Recibidos</h2>
+    <div *ngFor="let mensaje of listaMensajes" class="message">
+      <div class="header">
+        <div class="sender">{{ mensaje.origen }}</div>
+        <div class="subject">{{ mensaje.asunto }}</div>
+      </div>
+      <div class="body">{{ mensaje.mensaje }}</div>
+    </div>
+  </div>
+  
